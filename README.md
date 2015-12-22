@@ -18,3 +18,7 @@ git clone https://github.com/t-sugai/t-sugai-rcw.git
 パッケージエクスプローラー上で、/rcw/src/rcw/Main.java を右クリックして［Run As］ー［Java Application］をクリックする。
 
 Consoleに `オムライス` が表示される。
+
+### データ仕様
+
+レシピのタイトル名を改行なしで記述します。
