@@ -18,9 +18,12 @@ public class RecipeManager {
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String line = null;
 			RecipeBuilder builder = new RecipeBuilder();
+			long recipeCount = 1;
 			while((line = br.readLine()) != null){
 				builder.title(line);
+				builder.id(recipeCount);
 				recipes.add(builder.build());
+				recipeCount++;
 			}
 			
 			return recipes;

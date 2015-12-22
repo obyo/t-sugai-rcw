@@ -23,7 +23,7 @@ public class Main {
         List<Recipe> recipes = manager.loadFromFile(recipe_data_path);
 
         for (Recipe recipe : recipes) {
-            System.out.println(recipe.getTitle());
+            System.out.println(recipe.toString());
         }
 
     }

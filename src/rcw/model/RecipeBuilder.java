@@ -8,14 +8,22 @@ package rcw.model;
 public class RecipeBuilder {
 	
 	private String title;
+	private long id;
 	
 	public RecipeBuilder title(String title){
 		this.title = title;
 		return this;
 	}
+
+	public RecipeBuilder id(long id) {
+		this.id = id;
+		return this;
+	}
 	
 	public Recipe build(){
-		return new Recipe(this.title);
+		Recipe recipe = new Recipe(this.title);
+		recipe.setId(this.id);
+		return recipe;
 	}
 	
 	/**
@@ -30,6 +38,7 @@ public class RecipeBuilder {
 		}
 		
 		private String title;
+		private long id;
 		
 		/**
 		 * レシピのタイトルを取得する
@@ -38,9 +47,21 @@ public class RecipeBuilder {
 		public String getTitle(){
 			return this.title;
 		}
-		
-		// TODO toString() をオーバーライドする
-		
+
+		public void setId(long id) {
+			this.id = id;
+		}
+
+		public long getId() {
+			return id;
+		}
+
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append("id: ").append(id).append(" title:").append(title);
+			return sb.toString();
+		}
 	}
 	
 	
